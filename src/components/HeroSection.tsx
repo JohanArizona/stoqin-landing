@@ -57,7 +57,7 @@ export default function HeroSection() {
           {/* Mockup — Tablet Only (hidden on mobile, desktop) */}
           <div className="hidden md:flex lg:hidden justify-center my-8 relative min-h-[400px]">
             <motion.img
-              src="/MockupWeb.png"
+              src="/MockupAplikasiStoqin.webp"
               alt="Stoqin App Mockup"
               className="w-[280px] md:w-[320px] drop-shadow-2xl"
               initial={{ opacity: 0, scale: 0.9 }}
