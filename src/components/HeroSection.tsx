@@ -150,7 +150,7 @@ export default function HeroSection() {
           className="hidden lg:flex lg:flex-1 relative justify-center items-center min-h-[500px]"
         >
           <motion.img
-            src="/MockupWeb.png"
+            src="/MockupAplikasiStoqin.webp"
             alt="Stoqin App Mockup"
             className="w-[280px] md:w-[350px] lg:w-[420px] drop-shadow-2xl"
             initial={{ opacity: 0, scale: 0.9 }}
