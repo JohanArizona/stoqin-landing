@@ -31,6 +31,7 @@ export default function Footer() {
               <li><a href="mailto:stoqinid@gmail.com" className="text-gray-500 text-sm hover:text-green-400 transition-colors">Email</a></li>
               <li><a href="https://wa.me/081217260945" className="text-gray-500 text-sm hover:text-green-400 transition-colors">WhatsApp</a></li>
               <li><span className="text-gray-500 text-sm">Malang, Jawa Timur</span></li>
+              <li><a href="/privasi" className="text-gray-500 text-sm hover:text-green-400 transition-colors">Kebijakan Privasi</a></li>
             </ul>
           </div>
         </div>
