@@ -1,36 +1,32 @@
 import type { Metadata } from "next";
-import Footer from "@/components/Footer";
+import Navbar from "@/components/site/Navbar";
+import Footer from "@/components/site/Footer";
 
 export const metadata: Metadata = {
-  title: "Kebijakan Privasi Stoqin",
+  title: { absolute: "Kebijakan Privasi · Stoqin" },
   description:
     "Kebijakan Privasi aplikasi Stoqin: data yang dikumpulkan, penggunaannya, pihak ketiga, dan hak pengguna.",
   alternates: { canonical: "/privasi" },
 };
 
-const sectionCls = "bg-[#111111] border border-[#1F1F1F] rounded-2xl p-5 md:p-6 mb-4";
-const h2Cls = "font-display text-lg md:text-xl font-bold text-green-400 mb-3";
-const ulCls = "list-disc pl-5 mb-3 space-y-2";
+const sectionCls = "card mb-4 p-6 md:p-8";
+const h2Cls = "title mb-4 text-ink";
+const ulCls = "list-disc pl-5 mb-3 space-y-2 marker:text-brand-500";
 const pCls = "mb-3";
-const aCls = "text-green-400 underline hover:text-green-300";
+const aCls = "font-semibold text-brand-700 underline decoration-brand-300 underline-offset-4 hover:decoration-brand-600";
 
 export default function PrivasiPage() {
   return (
-    <main className="noise min-h-screen">
-      <header className="border-b border-[#1F1F1F]">
-        <div className="max-w-3xl mx-auto px-6 h-16 flex items-center">
-          <a href="/" aria-label="Kembali ke beranda Stoqin">
-            <img src="/StoqinWhite.png" alt="Logo Stoqin" className="w-max h-8" />
-          </a>
-        </div>
-      </header>
-
-      <div className="max-w-3xl mx-auto px-6 pt-10 pb-6">
-        <h1 className="font-display text-3xl md:text-4xl font-extrabold mb-2">Kebijakan Privasi Stoqin</h1>
-        <p className="text-gray-400">Berlaku sejak 28 September 2026</p>
+    <>
+      <Navbar />
+      <main className="bg-paper pt-28">
+      <div className="mx-auto max-w-3xl px-4 pb-10 sm:px-6">
+        <p className="eyebrow mb-3 text-brand-600">Legal</p>
+        <h1 className="display-lg">Kebijakan Privasi Stoqin</h1>
+        <p className="mt-4 text-muted">Berlaku sejak 28 September 2026</p>
       </div>
 
-      <article className="max-w-3xl mx-auto px-6 pb-16 text-gray-300 leading-relaxed">
+      <article className="mx-auto max-w-3xl px-4 pb-24 leading-relaxed text-ink-2 sm:px-6">
         <section className={sectionCls}>
           <p className={pCls}>Stoqin adalah aplikasi Android yang membantu pemilik warung dan kasir mengelola stok, penjualan, dan hutang pelanggan. Halaman ini menjelaskan data apa yang kami kumpulkan, untuk apa, dan bagaimana kamu mengendalikannya, sesuai UU No. 27 Tahun 2022 tentang Pelindungan Data Pribadi.</p>
         </section>
@@ -38,33 +34,33 @@ export default function PrivasiPage() {
         <section className={sectionCls}>
           <h2 className={h2Cls}>1. Data yang Kami Kumpulkan</h2>
           <ul className={ulCls}>
-            <li><strong className="text-white">Data akun:</strong> nama, email, nomor telepon (opsional), foto profil, dan password. Kalau masuk dengan Google, kami menerima nama, email, dan foto profil dari akun Google-mu.</li>
-            <li><strong className="text-white">Data warung:</strong> nama, alamat, titik lokasi di peta, foto warung, gambar QRIS, dan rekening transfer yang kamu tambahkan.</li>
-            <li><strong className="text-white">Data kasir:</strong> nama, username, tanggal lahir, dan jenis kelamin yang diisi saat bergabung ke warung.</li>
-            <li><strong className="text-white">Data usaha:</strong> produk, harga, stok, riwayat transaksi, dan catatan hutang, termasuk nama dan nomor telepon pelanggan yang kamu catat.</li>
-            <li><strong className="text-white">Data perangkat:</strong> token notifikasi untuk mengirim pemberitahuan ke HP-mu.</li>
+            <li><strong className="font-semibold text-ink">Data akun:</strong> nama, email, nomor telepon (opsional), foto profil, dan password. Kalau masuk dengan Google, kami menerima nama, email, dan foto profil dari akun Google-mu.</li>
+            <li><strong className="font-semibold text-ink">Data warung:</strong> nama, alamat, titik lokasi di peta, foto warung, gambar QRIS, dan rekening transfer yang kamu tambahkan.</li>
+            <li><strong className="font-semibold text-ink">Data kasir:</strong> nama, username, tanggal lahir, dan jenis kelamin yang diisi saat bergabung ke warung.</li>
+            <li><strong className="font-semibold text-ink">Data usaha:</strong> produk, harga, stok, riwayat transaksi, dan catatan hutang, termasuk nama dan nomor telepon pelanggan yang kamu catat.</li>
+            <li><strong className="font-semibold text-ink">Data perangkat:</strong> token notifikasi untuk mengirim pemberitahuan ke HP-mu.</li>
           </ul>
         </section>
 
         <section className={sectionCls}>
           <h2 className={h2Cls}>2. Data dari Akun Google</h2>
-          <p className={pCls}>Kalau kamu memilih &quot;Masuk dengan Google&quot;, Stoqin hanya meminta informasi dasar akun Google-mu: <strong className="text-white">nama, alamat email, dan foto profil</strong>. Kami tidak meminta akses ke Gmail, Kontak, Drive, Kalender, atau data Google lainnya.</p>
+          <p className={pCls}>Kalau kamu memilih &quot;Masuk dengan Google&quot;, Stoqin hanya meminta informasi dasar akun Google-mu: <strong className="font-semibold text-ink">nama, alamat email, dan foto profil</strong>. Kami tidak meminta akses ke Gmail, Kontak, Drive, Kalender, atau data Google lainnya.</p>
           <ul className={ulCls}>
-            <li>Data ini dipakai <strong className="text-white">hanya</strong> untuk membuat akun Stoqin, masuk ke akun tersebut, dan menampilkan nama serta foto profilmu di aplikasi.</li>
+            <li>Data ini dipakai <strong className="font-semibold text-ink">hanya</strong> untuk membuat akun Stoqin, masuk ke akun tersebut, dan menampilkan nama serta foto profilmu di aplikasi.</li>
             <li>Data ini tidak dijual, tidak dipakai untuk iklan, dan tidak dibagikan ke pihak lain.</li>
             <li>Data ini disimpan di server Stoqin selama akunmu aktif, dan dihapus saat akun dihapus (lihat bagian 8).</li>
           </ul>
-          <p className={`${pCls} text-gray-400`} lang="en"><em>Google user data (English):</em> When you sign in with Google, Stoqin only requests your basic profile information: name, email address, and profile picture. This data is used solely to create and sign in to your Stoqin account and to display your name and photo in the app. It is not sold, not used for advertising, and not shared with third parties. It is stored on Stoqin servers while your account is active and deleted when you delete your account.</p>
+          <p className={`${pCls} text-muted`} lang="en"><em>Google user data (English):</em> When you sign in with Google, Stoqin only requests your basic profile information: name, email address, and profile picture. This data is used solely to create and sign in to your Stoqin account and to display your name and photo in the app. It is not sold, not used for advertising, and not shared with third parties. It is stored on Stoqin servers while your account is active and deleted when you delete your account.</p>
         </section>
 
         <section className={sectionCls}>
           <h2 className={h2Cls}>3. Izin di HP-mu</h2>
           <p className={pCls}>Setiap izin hanya diminta saat fiturnya kamu pakai, dan bisa dicabut kapan saja lewat pengaturan HP.</p>
           <ul className={ulCls}>
-            <li><strong className="text-white">Kamera:</strong> memindai barcode produk dan memotret produk, warung, atau QRIS. Pemindaian barcode diproses di HP.</li>
-            <li><strong className="text-white">Mikrofon:</strong> fitur kasir suara dan asisten suara. Suaramu diubah menjadi teks oleh layanan pengenal suara di HP, lalu hanya teksnya yang dikirim ke server, untuk dicocokkan dengan produk warungmu atau dijawab oleh asisten.</li>
-            <li><strong className="text-white">Lokasi:</strong> menandai titik lokasi warung saat pendaftaran.</li>
-            <li><strong className="text-white">Notifikasi:</strong> pemberitahuan transaksi, stok menipis, dan selisih stok. Tiap jenisnya bisa dimatikan di Setelan &gt; Notifikasi.</li>
+            <li><strong className="font-semibold text-ink">Kamera:</strong> memindai barcode produk dan memotret produk, warung, atau QRIS. Pemindaian barcode diproses di HP.</li>
+            <li><strong className="font-semibold text-ink">Mikrofon:</strong> fitur kasir suara dan asisten suara. Suaramu diubah menjadi teks oleh layanan pengenal suara di HP, lalu hanya teksnya yang dikirim ke server, untuk dicocokkan dengan produk warungmu atau dijawab oleh asisten.</li>
+            <li><strong className="font-semibold text-ink">Lokasi:</strong> menandai titik lokasi warung saat pendaftaran.</li>
+            <li><strong className="font-semibold text-ink">Notifikasi:</strong> pemberitahuan transaksi, stok menipis, dan selisih stok. Tiap jenisnya bisa dimatikan di Setelan &gt; Notifikasi.</li>
           </ul>
         </section>
 
@@ -85,11 +81,11 @@ export default function PrivasiPage() {
           <h2 className={h2Cls}>5. Pihak Ketiga</h2>
           <p className={pCls}>Beberapa layanan mitra memproses data seperlunya untuk menjalankan fitur tertentu:</p>
           <ul className={ulCls}>
-            <li><strong className="text-white">Google:</strong> login dengan Google, notifikasi (Firebase Cloud Messaging), pemindai barcode di HP (ML Kit), serta pencocokan pesanan kasir suara dan jawaban asisten suara (Gemini, lewat server kami).</li>
-            <li><strong className="text-white">Mapbox:</strong> menampilkan peta saat memilih lokasi warung.</li>
-            <li><strong className="text-white">Midtrans:</strong> memproses pembayaran Stoqin Pro. Data kartu atau akun pembayaranmu dimasukkan langsung di halaman Midtrans, bukan disimpan oleh Stoqin.</li>
-            <li><strong className="text-white">Penyedia email:</strong> mengirim kode OTP ke emailmu.</li>
-            <li><strong className="text-white">Penyimpanan cloud:</strong> menyimpan foto yang kamu unggah.</li>
+            <li><strong className="font-semibold text-ink">Google:</strong> login dengan Google, notifikasi (Firebase Cloud Messaging), pemindai barcode di HP (ML Kit), serta pencocokan pesanan kasir suara dan jawaban asisten suara (Gemini, lewat server kami).</li>
+            <li><strong className="font-semibold text-ink">Mapbox:</strong> menampilkan peta saat memilih lokasi warung.</li>
+            <li><strong className="font-semibold text-ink">Midtrans:</strong> memproses pembayaran Stoqin Pro. Data kartu atau akun pembayaranmu dimasukkan langsung di halaman Midtrans, bukan disimpan oleh Stoqin.</li>
+            <li><strong className="font-semibold text-ink">Penyedia email:</strong> mengirim kode OTP ke emailmu.</li>
+            <li><strong className="font-semibold text-ink">Penyimpanan cloud:</strong> menyimpan foto yang kamu unggah.</li>
           </ul>
         </section>
 
@@ -112,9 +108,9 @@ export default function PrivasiPage() {
         <section className={sectionCls}>
           <h2 className={h2Cls}>8. Hak Kamu &amp; Hapus Akun</h2>
           <ul className={ulCls}>
-            <li><strong className="text-white">Melihat &amp; mengubah:</strong> data akun dan warung bisa diubah di Setelan &gt; Edit Profile.</li>
-            <li><strong className="text-white">Menghapus akun:</strong> buka Setelan &gt; Hapus Akun. Untuk pemilik warung, data warung (produk, transaksi, hutang, laporan) ikut dihapus dan semua kasir kehilangan akses.</li>
-            <li><strong className="text-white">Lewat email:</strong> kalau tidak bisa masuk ke aplikasi, kirim permintaan hapus akun dari email yang terdaftar ke <a href="mailto:stoqinid@gmail.com" className={aCls}>stoqinid@gmail.com</a>.</li>
+            <li><strong className="font-semibold text-ink">Melihat &amp; mengubah:</strong> data akun dan warung bisa diubah di Setelan &gt; Edit Profile.</li>
+            <li><strong className="font-semibold text-ink">Menghapus akun:</strong> buka Setelan &gt; Hapus Akun. Untuk pemilik warung, data warung (produk, transaksi, hutang, laporan) ikut dihapus dan semua kasir kehilangan akses.</li>
+            <li><strong className="font-semibold text-ink">Lewat email:</strong> kalau tidak bisa masuk ke aplikasi, kirim permintaan hapus akun dari email yang terdaftar ke <a href="mailto:stoqinid@gmail.com" className={aCls}>stoqinid@gmail.com</a>.</li>
           </ul>
           <p className={pCls}>Data yang wajib disimpan menurut hukum (misalnya catatan pembayaran langganan) bisa kami simpan lebih lama sesuai kewajiban tersebut.</p>
         </section>
@@ -129,8 +125,8 @@ export default function PrivasiPage() {
           <p className={pCls}>Pertanyaan atau permintaan terkait data pribadi bisa dikirim ke <a href="mailto:stoqinid@gmail.com" className={aCls}>stoqinid@gmail.com</a>.</p>
         </section>
       </article>
-
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }

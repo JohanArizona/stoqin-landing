@@ -1,105 +1,325 @@
 @import "tailwindcss";
 
-:root {
-  --green-primary: #22C55E;
-  --green-dark: #16A34A;
-  --green-glow: #4ADE80;
-  --green-dim: #14532D;
-  --bg-dark: #0A0A0A;
-  --bg-card: #111111;
-  --bg-card2: #161616;
-  --text-muted: #6B7280;
-  --border: #1F1F1F;
+/*
+ * Stoqin design tokens.
+ * Warna diambil dari aplikasi Android (Color.kt) dan logo: hijau Stoqin + tinta hijau gelap.
+ * Situs sengaja terang seperti aplikasinya (aplikasi tidak punya mode gelap).
+ */
+@theme {
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --color-ink: #0c1810;
+  --color-ink-2: #2c3a31;
+  --color-muted: #5f6b64;
+  --color-subtle: #8a948e;
+  --color-paper: #f6f7f5;
+  --color-canvas: #ffffff;
+  --color-line: rgb(12 24 16 / 0.08);
+  --color-line-strong: rgb(12 24 16 / 0.14);
+
+  --color-brand-50: #effaf0;
+  --color-brand-100: #d9f3dc;
+  --color-brand-200: #b2e6b8;
+  --color-brand-300: #7cd486;
+  --color-brand-400: #2bb83b;
+  --color-brand-500: #00aa13;
+  --color-brand-600: #00770d;
+  --color-brand-700: #00680c;
+  --color-brand-800: #0d4a16;
+  --color-brand-900: #14281d;
+  --color-brand-950: #0a1a10;
+
+  --color-honey: #f2b705;
+  --color-honey-soft: #fff4cc;
+  --color-alert: #e5484d;
+
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.36, 0.64, 1);
+
+  --animate-rise: rise 0.9s var(--ease-out-quint) both;
 }
 
-@font-face {
-  font-family: "Inter", sans-serif;
-  src: local("Inter"), local("Inter-Regular");
-  font-display: swap;
-}
-
-* {
-  box-sizing: border-box;
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 html {
-  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-padding-top: 80px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 body {
-  font-family: var(--font-body), sans-serif;
-  background: var(--bg-dark);
-  color: white;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
 }
 
-.font-display {
-  font-family: var(--font-display), sans-serif;
+::selection {
+  background: var(--color-brand-200);
+  color: var(--color-brand-900);
 }
 
-/* Noise texture overlay */
-.noise::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 9999;
-  opacity: 0.4;
+:focus-visible {
+  outline: 2px solid var(--color-brand-500);
+  outline-offset: 3px;
+  border-radius: 10px;
 }
 
-/* Glow effects */
-.glow-green {
-  box-shadow: 0 0 40px rgba(34, 197, 94, 0.3), 0 0 80px rgba(34, 197, 94, 0.1);
+/* ---------- Typography (tracking per ukuran, ala Apple) ---------- */
+.display-xl {
+  font-size: clamp(2.75rem, 7.2vw, 6rem);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+  font-weight: 800;
+}
+.display-lg {
+  font-size: clamp(2.25rem, 5vw, 4.25rem);
+  line-height: 1.04;
+  letter-spacing: -0.04em;
+  font-weight: 800;
+}
+.display-md {
+  font-size: clamp(1.75rem, 3.2vw, 2.75rem);
+  line-height: 1.08;
+  letter-spacing: -0.032em;
+  font-weight: 800;
+}
+.title {
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+}
+.lead {
+  font-size: clamp(1.0625rem, 1.4vw, 1.3125rem);
+  line-height: 1.55;
+  letter-spacing: -0.008em;
+}
+.eyebrow {
+  font-size: 0.8125rem;
+  letter-spacing: 0.01em;
+  font-weight: 700;
 }
 
-.text-glow {
-  text-shadow: 0 0 40px rgba(74, 222, 128, 0.5);
+.text-gradient-brand {
+  background: linear-gradient(100deg, #00770d 0%, #00aa13 45%, #2bb83b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-/* Gradient mesh */
-.mesh-bg {
+/* ---------- Materials ---------- */
+.glass {
+  background: rgb(255 255 255 / 0.72);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgb(255 255 255 / 0.6);
+  box-shadow:
+    0 1px 0 rgb(255 255 255 / 0.7) inset,
+    0 18px 40px -12px rgb(12 24 16 / 0.18),
+    0 2px 6px rgb(12 24 16 / 0.06);
+}
+.glass-dark {
+  background: rgb(10 26 16 / 0.62);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border: 1px solid rgb(255 255 255 / 0.1);
+}
+
+.card {
+  background: var(--color-canvas);
+  border-radius: 28px;
+  box-shadow:
+    0 0 0 1px var(--color-line),
+    0 1px 2px rgb(12 24 16 / 0.04),
+    0 12px 32px -16px rgb(12 24 16 / 0.12);
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .glass {
+    background: #fff;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .glass-dark {
+    background: var(--color-brand-950);
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+}
+
+@media (prefers-contrast: more) {
+  .glass,
+  .card {
+    background: #fff;
+    border: 1px solid var(--color-ink);
+  }
+}
+
+/* ---------- Buttons: respon saat ditekan, bukan saat dilepas ---------- */
+.press {
+  transition:
+    transform 160ms var(--ease-out-quint),
+    background-color 200ms ease,
+    box-shadow 200ms ease,
+    color 200ms ease;
+}
+.press:active {
+  transform: scale(0.97);
+  transition-duration: 80ms;
+}
+
+/* ---------- Background patterns ---------- */
+.dot-grid {
+  background-image: radial-gradient(rgb(12 24 16 / 0.09) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+.hero-glow {
   background:
-    radial-gradient(ellipse 80% 60% at 20% -10%, rgba(34, 197, 94, 0.12) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 50% at 80% 100%, rgba(22, 163, 74, 0.08) 0%, transparent 60%),
-    #0A0A0A;
+    radial-gradient(60% 50% at 50% 0%, rgb(43 184 59 / 0.18) 0%, transparent 70%),
+    radial-gradient(40% 40% at 85% 30%, rgb(242 183 5 / 0.08) 0%, transparent 70%),
+    radial-gradient(40% 40% at 10% 40%, rgb(0 170 19 / 0.08) 0%, transparent 70%);
 }
 
-/* Scrollbar
-::-webkit-scrollbar { width: 12px; }
-::-webkit-scrollbar-track { background: #0A0A0A; }
-::-webkit-scrollbar-thumb { background: #22C55E; border-radius: 2px; } */
+/* ---------- Scroll-driven reveal (tanpa JavaScript, progressive enhancement) ---------- */
+@media (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .reveal {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 55%;
+    }
+    .reveal-scale {
+      animation: reveal-scale linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 35%;
+    }
+    .parallax-up {
+      animation: parallax-up linear both;
+      animation-timeline: view();
+      animation-range: cover 0% cover 100%;
+    }
+  }
+  .animate-rise {
+    animation: var(--animate-rise);
+  }
+}
 
-/* Marquee */
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes reveal-scale {
+  from {
+    opacity: 0.4;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes parallax-up {
+  from {
+    transform: translateY(40px);
+  }
+  to {
+    transform: translateY(-40px);
+  }
+}
+
+/* ---------- Marquee (logo pembayaran) ---------- */
+.marquee {
+  mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+}
+.marquee-track {
+  animation: marquee 40s linear infinite;
+}
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-.animate-marquee {
-  animation: marquee 20s linear infinite;
+  to {
+    transform: translateX(-50%);
+  }
 }
 
-/* Pulse ring */
-@keyframes pulse-ring {
-  0% { transform: scale(1); opacity: 0.6; }
-  100% { transform: scale(1.8); opacity: 0; }
+/* ---------- Kurir bergerak di peta ---------- */
+.courier-dot {
+  offset-path: path("M 40 250 C 90 210, 110 170, 160 160 S 250 120, 280 70");
+  offset-rotate: 0deg;
+  animation: courier 7s var(--ease-out-quint) infinite;
 }
-.pulse-ring {
-  animation: pulse-ring 2s ease-out infinite;
-}
-
-/* Float */
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-12px); }
-}
-.animate-float {
-  animation: float 4s ease-in-out infinite;
+@keyframes courier {
+  0% {
+    offset-distance: 0%;
+  }
+  80%,
+  100% {
+    offset-distance: 100%;
+  }
 }
 
-/* Grid pattern */
-.grid-pattern {
-  background-image:
-    linear-gradient(rgba(34,197,94,0.05) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(34,197,94,0.05) 1px, transparent 1px);
-  background-size: 60px 60px;
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track,
+  .courier-dot {
+    animation: none;
+  }
+  .courier-dot {
+    offset-distance: 70%;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* FAQ disclosure */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+details[open] .faq-icon {
+  transform: rotate(45deg);
+}
+@supports (interpolate-size: allow-keywords) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+  details::details-content {
+    height: 0;
+    overflow: clip;
+    transition:
+      height 320ms var(--ease-out-quint),
+      content-visibility 320ms allow-discrete;
+  }
+  details[open]::details-content {
+    height: auto;
+  }
 }
