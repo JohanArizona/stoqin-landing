@@ -85,7 +85,8 @@ export default function AssistantDemo() {
 
   return (
     <div ref={rootRef} className="grid items-center gap-10 lg:grid-cols-[0.9fr_1.1fr]">
-      <div className="relative mx-auto aspect-square w-full max-w-[380px]">
+      <div className="mx-auto flex w-full max-w-[380px] flex-col items-center gap-4">
+      <div className="relative aspect-square w-full">
         <div aria-hidden className="absolute inset-[12%] rounded-full bg-brand-200/60 blur-3xl" />
         {(["listening", "thinking", "happy"] as const).map((p) => (
           <Image
@@ -100,7 +101,8 @@ export default function AssistantDemo() {
             }`}
           />
         ))}
-        <span className="glass absolute -bottom-2 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full px-4 py-1.5 text-xs font-semibold text-ink-2" aria-live="polite">
+      </div>
+        <span className="whitespace-nowrap rounded-full border border-line bg-canvas px-4 py-1.5 text-xs font-semibold text-ink-2" aria-live="polite">
           {phase === "listening" ? "Mendengarkan…" : phase === "thinking" ? "Membaca data warungmu…" : "Siap menjawab"}
         </span>
       </div>

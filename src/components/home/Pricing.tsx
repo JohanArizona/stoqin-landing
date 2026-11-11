@@ -1,5 +1,7 @@
 import { Check, Sparkles } from "lucide-react";
-import { SectionHeading, GooglePlayIcon } from "@/components/ui/primitives";
+import { SectionHead } from "@/components/ui/Chapter";
+import { GooglePlayIcon } from "@/components/ui/primitives";
+import { C, Ring } from "@/components/shapes/Shapes";
 import { playStoreUrl, rupiah, site } from "@/lib/site";
 
 // Sama dengan tabel fitur di layar Upgrade aplikasi (`UpgradePremiumScreen.kt`).
@@ -22,32 +24,34 @@ const PRO = [
 
 export default function Pricing() {
   return (
-    <section id="harga" aria-labelledby="harga-title" className="bg-paper py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeading
+    <section id="harga" aria-labelledby="harga-title" className="border-t border-line bg-paper py-24 sm:py-36">
+      <div className="mx-auto max-w-[1320px] px-4 sm:px-8">
+        <SectionHead
+          n={8}
+          label="Harga"
           id="harga-title"
-          eyebrow="Harga"
           title={
             <>
               Mulai gratis. <br className="hidden sm:block" />
-              <span className="text-muted">Naik kelas kapan saja.</span>
+              <span className="text-subtle">Naik kelas kapan saja.</span>
             </>
           }
-          lead="Semua fitur untuk berjualan sehari-hari gratis, tanpa batas waktu. Pro untuk kamu yang ingin membaca untung-rugi lebih dalam."
+          lead="Fitur jualan sehari-hari gratis selamanya."
         />
 
-        <div className="mx-auto mt-16 grid max-w-4xl gap-4 md:grid-cols-2">
-          <article className="card reveal flex flex-col p-8 sm:p-10">
-            <h3 className="text-lg font-bold">Gratis</h3>
-            <p className="mt-1 text-sm text-muted">Untuk semua warung</p>
-            <p className="mt-8 flex items-baseline gap-1.5">
-              <span className="text-5xl font-extrabold tracking-[-0.04em]">Rp0</span>
-              <span className="text-sm font-medium text-muted">selamanya</span>
+        <div className="mt-14 grid gap-4 lg:grid-cols-2">
+          <article className="reveal relative flex flex-col overflow-hidden rounded-[24px] border border-line bg-canvas p-8 sm:p-10">
+            <Ring color={C.mint} className="absolute -right-16 -top-16 hidden size-40 sm:block" />
+            <p className="label text-subtle">Gratis</p>
+            <p className="mt-6 flex flex-wrap items-baseline gap-x-2 gap-y-1">
+              <span className="text-[2.9rem] font-medium leading-none tracking-[-0.05em] sm:text-7xl">Rp0</span>
+              <span className="text-sm text-muted">selamanya</span>
             </p>
-            <ul className="mt-8 space-y-3.5 text-[0.95rem]">
+            <p className="mt-2 text-muted">Untuk semua warung.</p>
+            <ul className="mt-8 grid gap-3 text-[0.95rem] sm:grid-cols-2">
               {FREE.map((f) => (
-                <li key={f} className="flex gap-3">
-                  <Check className="mt-0.5 size-5 shrink-0 text-brand-500" strokeWidth={2.5} aria-hidden />
+                <li key={f} className="flex gap-2.5">
+                  <Check className="mt-0.5 size-4 shrink-0 text-leaf" strokeWidth={2.5} aria-hidden />
                   {f}
                 </li>
               ))}
@@ -57,47 +61,41 @@ export default function Pricing() {
                 href={playStoreUrl}
                 target="_blank"
                 rel="noopener"
-                className="press flex h-13 items-center justify-center gap-2 rounded-2xl bg-paper font-semibold text-ink ring-1 ring-line-strong hover:bg-brand-50"
+                className="press btn-ring inline-flex h-13 items-center gap-2 px-6 font-semibold text-ink"
               >
                 <GooglePlayIcon className="size-5" /> Mulai gratis
               </a>
             </div>
           </article>
 
-          <article className="reveal relative flex flex-col overflow-hidden rounded-[28px] bg-brand-950 p-8 text-white shadow-[0_40px_80px_-30px_rgb(10_26_16/0.6)] sm:p-10">
-            <div aria-hidden className="absolute -right-20 -top-20 size-64 rounded-full bg-brand-500/30 blur-3xl" />
-            <div className="relative flex items-center justify-between">
-              <h3 className="text-lg font-bold">Stoqin Pro</h3>
-              <span className="inline-flex items-center gap-1 rounded-full bg-brand-500 px-3 py-1 text-xs font-bold text-brand-950">
-                <Sparkles className="size-3.5" aria-hidden /> Analisis AI
-              </span>
-            </div>
-            <p className="relative mt-1 text-sm text-white/60">Untuk warung yang ingin tumbuh</p>
-            <p className="relative mt-8 flex items-baseline gap-1.5">
-              <span className="text-5xl font-extrabold tracking-[-0.04em]">{rupiah(site.proPrice)}</span>
-              <span className="text-sm font-medium text-white/60">/ bulan</span>
+          <article className="reveal relative flex flex-col overflow-hidden rounded-[24px] bg-brand-900 p-8 text-white sm:p-10">
+            <Ring color="#1F4A2C" className="absolute -right-16 -top-16 hidden size-40 sm:block" />
+            <p className="label flex items-center gap-2 text-white/60">
+              Stoqin Pro <Sparkles className="size-3.5 text-brand-300" aria-hidden />
             </p>
-            <p className="relative mt-8 text-sm font-semibold text-white/60">Semua fitur Gratis, ditambah:</p>
-            <ul className="relative mt-4 space-y-3.5 text-[0.95rem]">
+            <p className="mt-6 flex flex-wrap items-baseline gap-x-2 gap-y-1">
+              <span className="text-[2.9rem] font-medium leading-none tracking-[-0.05em] sm:text-7xl">{rupiah(site.proPrice)}</span>
+              <span className="text-sm text-white/60">/ bulan</span>
+            </p>
+            <p className="mt-2 text-white/60">Semua fitur Gratis, ditambah:</p>
+            <ul className="mt-8 grid gap-3 text-[0.95rem] sm:grid-cols-2">
               {PRO.map((f) => (
-                <li key={f} className="flex gap-3">
-                  <Check className="mt-0.5 size-5 shrink-0 text-brand-400" strokeWidth={2.5} aria-hidden />
+                <li key={f} className="flex gap-2.5">
+                  <Check className="mt-0.5 size-4 shrink-0 text-brand-300" strokeWidth={2.5} aria-hidden />
                   {f}
                 </li>
               ))}
             </ul>
-            <div className="relative mt-auto pt-10">
+            <div className="mt-auto flex flex-col gap-4 pt-10 sm:flex-row sm:items-center">
               <a
                 href={playStoreUrl}
                 target="_blank"
                 rel="noopener"
-                className="press flex h-13 items-center justify-center rounded-2xl bg-white font-bold text-ink hover:bg-brand-50"
+                className="press inline-flex h-13 w-fit shrink-0 items-center whitespace-nowrap rounded-full bg-white px-6 font-semibold text-ink hover:bg-brand-50"
               >
                 Coba Stoqin Pro
               </a>
-              <p className="mt-4 text-center text-xs text-white/50">
-                Dibayar lewat Google Play, diperpanjang otomatis. Batalkan kapan saja.
-              </p>
+              <p className="text-xs text-white/50">Dibayar lewat Google Play, diperpanjang otomatis. Batalkan kapan saja.</p>
             </div>
           </article>
         </div>

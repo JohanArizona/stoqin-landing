@@ -41,7 +41,7 @@ function useCountUp(target: number) {
   return value;
 }
 
-export default function MiniCashier() {
+export default function MiniCashier({ bare = false }: { bare?: boolean }) {
   const [cart, setCart] = useState<Record<string, number>>({ indomie: 1 });
   const [method, setMethod] = useState<(typeof METHODS)[number]>("Tunai");
   const [paid, setPaid] = useState(false);
@@ -91,7 +91,13 @@ export default function MiniCashier() {
   };
 
   return (
-    <div className="relative mx-auto w-full max-w-[360px] select-none rounded-[32px] bg-paper p-3 shadow-[0_0_0_1px_rgb(12_24_16/0.06),0_30px_60px_-30px_rgb(12_24_16/0.35)]">
+    <div
+      className={
+        bare
+          ? "relative w-full select-none px-3"
+          : "relative mx-auto w-full max-w-[360px] select-none rounded-[32px] bg-paper p-3 shadow-[0_0_0_1px_rgb(12_24_16/0.06),0_30px_60px_-30px_rgb(12_24_16/0.35)]"
+      }
+    >
       <div className="flex items-center justify-between px-2 pb-3 pt-1">
         <p className="text-sm font-bold text-ink">Kasir</p>
         <div className="flex gap-1.5">

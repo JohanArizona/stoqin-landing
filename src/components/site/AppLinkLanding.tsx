@@ -32,7 +32,7 @@ export default function AppLinkLanding({
 }) {
   return (
     <div className="relative flex min-h-dvh flex-col overflow-hidden">
-      <div aria-hidden className="hero-glow pointer-events-none absolute inset-0" />
+      <div aria-hidden className="dot-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(60%_50%_at_50%_30%,#000,transparent)]" />
       <header className="relative mx-auto flex h-16 w-full max-w-5xl items-center px-4 sm:px-6">
         <Link href="/" aria-label="Stoqin, ke beranda" className="text-ink">
           <Logo className="h-8 w-auto" />
@@ -45,9 +45,9 @@ export default function AppLinkLanding({
           width={640}
           height={640}
           priority
-          className="animate-rise size-44 sm:size-52"
+          className="pop-in size-44 sm:size-52"
         />
-        <p className="eyebrow mt-6 text-brand-600">{eyebrow}</p>
+        <p className="label mt-6 text-brand-600">{eyebrow}</p>
         <h1 className="display-md mt-3 text-balance">{title}</h1>
         <div className="lead mt-4 text-pretty text-muted">{children}</div>
         <div className="mt-9 flex w-full flex-col items-center gap-3">

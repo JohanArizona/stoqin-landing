@@ -1,22 +1,22 @@
-import { SectionHeading } from "@/components/ui/primitives";
+import { SectionHead } from "@/components/ui/Chapter";
 import AssistantDemo from "./AssistantDemo";
 
 export default function Assistant() {
   return (
-    <section id="asisten" aria-labelledby="asisten-title" className="relative overflow-hidden py-24 sm:py-32">
-      <div aria-hidden className="dot-grid pointer-events-none absolute inset-0 opacity-60 [mask-image:radial-gradient(50%_50%_at_30%_50%,#000,transparent)]" />
-      <div className="relative mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeading
+    <section id="asisten" aria-labelledby="asisten-title" className="relative overflow-hidden border-t border-line bg-paper py-24 sm:py-32">
+      <div className="mx-auto max-w-[1320px] px-4 sm:px-8">
+        <SectionHead
+          n={6}
+          label="Asisten AI · Pro"
           id="asisten-title"
-          eyebrow="Asisten suara AI · Stoqin Pro"
           title={
             <>
-              Tanya warungmu. <span className="text-gradient-brand">Langsung dijawab.</span>
+              Tanya warungmu. <span className="text-brand-600">Langsung dijawab.</span>
             </>
           }
-          lead="Ketuk mikrofon, lalu bertanya seperti ke teman. Asisten Stoqin membaca omzet, stok, dan barang terlaris warungmu, lalu menjawab dengan suara. Ia hanya membaca data — tidak pernah mengubahnya."
+          lead="Bertanya dengan suara, dijawab dari data warungmu sendiri."
         />
-        <div className="mt-16">
+        <div className="mt-14">
           <AssistantDemo />
         </div>
       </div>

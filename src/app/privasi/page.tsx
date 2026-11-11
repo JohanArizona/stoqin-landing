@@ -21,7 +21,7 @@ export default function PrivasiPage() {
       <Navbar />
       <main className="bg-paper pt-28">
       <div className="mx-auto max-w-3xl px-4 pb-10 sm:px-6">
-        <p className="eyebrow mb-3 text-brand-600">Legal</p>
+        <p className="label mb-3 text-brand-600">Legal</p>
         <h1 className="display-lg">Kebijakan Privasi Stoqin</h1>
         <p className="mt-4 text-muted">Berlaku sejak 28 September 2026</p>
       </div>

@@ -32,6 +32,7 @@ export const waUrl = (text?: string) =>
 export const rupiah = (n: number) => "Rp" + n.toLocaleString("id-ID");
 
 export const navLinks = [
+  { href: "/#cara-kerja", label: "Cara kerja" },
   { href: "/#fitur", label: "Fitur" },
   { href: "/#kulakan", label: "Kulakan" },
   { href: "/#asisten", label: "Asisten AI" },

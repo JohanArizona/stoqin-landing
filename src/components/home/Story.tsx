@@ -1,51 +1,27 @@
-import { Fuel, NotebookPen, Wallet } from "lucide-react";
-
-const PAINS = [
-  {
-    icon: Fuel,
-    title: "Ongkos kulakan menggerus untung",
-    body: "Bensin, parkir, dan setengah hari keliling pasar grosir hanya untuk mencari harga yang lebih murah.",
-  },
-  {
-    icon: NotebookPen,
-    title: "Stok & hutang di buku tulis",
-    body: "Barang laku tiba-tiba habis, catatan hutang pelanggan terselip, dan selisih kas tak pernah ketahuan sebabnya.",
-  },
-  {
-    icon: Wallet,
-    title: "Uang modal tercampur",
-    body: "Omzet terlihat ramai, tapi tidak pernah jelas berapa untung bersih hari ini.",
-  },
-];
+import ScrollWords from "@/components/motion/ScrollWords";
+import { Chapter } from "@/components/ui/Chapter";
 
 export default function Story() {
   return (
-    <section aria-labelledby="story-title" className="py-20 sm:py-28">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <figure className="reveal mx-auto max-w-4xl text-center">
-          <blockquote>
-            <p id="story-title" className="display-md text-balance text-ink">
-              <span className="text-brand-500">“</span>Biaya parkir dan bensin kalau harus keliling cari barang murah itu lumayan.
-              Untung sedikit, malah habis di jalan.<span className="text-brand-500">”</span>
-            </p>
+    <section aria-labelledby="story-title" className="relative border-t border-line bg-canvas py-24 sm:py-36">
+      <div className="mx-auto max-w-[1320px] px-4 sm:px-8">
+        <Chapter n={2}>Kenapa Stoqin</Chapter>
+        <h2 id="story-title" className="sr-only">
+          Kenapa warung butuh Stoqin
+        </h2>
+        <ScrollWords
+          className="display-lg mt-10 max-w-5xl text-pretty !leading-[1.14] text-ink"
+          text="Warung itu sibuk. Stok dan hutang masih di buku tulis, kulakan makan ongkos. *Stoqin* merapikan semuanya — *dari* *satu* *HP.*"
+        />
+
+        <figure className="reveal mt-16 flex max-w-2xl flex-col gap-5 border-l-2 border-leaf pl-6 sm:mt-20">
+          <blockquote className="text-xl font-medium leading-snug tracking-[-0.02em] text-ink sm:text-2xl">
+            “Biaya parkir dan bensin kalau harus keliling cari barang murah itu lumayan, untung sedikit malah habis di jalan.”
           </blockquote>
-          <figcaption className="mt-6 text-sm text-muted">
-            <span className="font-semibold text-ink">Ibu Yuyun</span> · pemilik warung sembako di Malang, dalam wawancara riset Stoqin
+          <figcaption className="text-sm text-muted">
+            <span className="font-semibold text-ink">Ibu Yuyun</span> · pemilik warung sembako, Malang
           </figcaption>
         </figure>
-
-        <div className="mt-16 grid gap-4 md:grid-cols-3">
-          {PAINS.map((p) => (
-            <div key={p.title} className="reveal rounded-[28px] bg-paper p-7">
-              <p.icon className="size-6 text-ink-2" aria-hidden strokeWidth={1.75} />
-              <h3 className="mt-5 text-lg font-bold tracking-tight">{p.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted">{p.body}</p>
-            </div>
-          ))}
-        </div>
-        <p className="reveal mt-10 text-center text-lg font-semibold text-ink">
-          Stoqin dibuat untuk menyelesaikan ketiganya. <span className="text-brand-600">Dari HP yang sudah kamu punya.</span>
-        </p>
       </div>
     </section>
   );

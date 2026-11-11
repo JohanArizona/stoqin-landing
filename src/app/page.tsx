@@ -3,12 +3,17 @@ import Footer from "@/components/site/Footer";
 import Hero from "@/components/home/Hero";
 import Facts from "@/components/home/Facts";
 import Story from "@/components/home/Story";
-import Features from "@/components/home/Features";
+import DragWords from "@/components/home/DragWords";
+import WarungGallery from "@/components/home/WarungGallery";
+import ProductStory from "@/components/home/ProductStory";
 import Kulakan from "@/components/home/Kulakan";
 import Assistant from "@/components/home/Assistant";
 import Ecosystem from "@/components/home/Ecosystem";
-import HowToStart from "@/components/home/HowToStart";
 import Pricing from "@/components/home/Pricing";
+import SmoothScroll from "@/components/motion/SmoothScroll";
+import ClickBurst from "@/components/motion/ClickBurst";
+import Intro from "@/components/motion/Intro";
+import CursorLabel from "@/components/motion/CursorLabel";
 import Faq from "@/components/home/Faq";
 import FinalCta from "@/components/home/FinalCta";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -39,7 +44,6 @@ const structuredData = {
           "@type": "ContactPoint",
           contactType: "customer support",
           email: site.email,
-          telephone: `+${site.whatsapp}`,
           availableLanguage: ["Indonesian"],
           areaServed: "ID",
         },
@@ -79,8 +83,8 @@ const structuredData = {
       installUrl: playStoreUrl,
       downloadUrl: playStoreUrl,
       url: site.url,
-      image: `${site.url}/app-home.webp`,
-      screenshot: `${site.url}/app-home.webp`,
+      image: `${site.url}/app/home.webp`,
+      screenshot: ["home", "kasir", "stok", "hutang", "kulakan", "premium"].map((s) => `${site.url}/app/${s}.webp`),
       publisher: { "@id": ORG_ID },
       featureList: [
         "Kasir digital dengan scan barcode kamera",
@@ -139,16 +143,21 @@ export default function Home() {
       >
         Lewati ke konten
       </a>
+      <Intro />
+      <SmoothScroll />
+      <ClickBurst />
+      <CursorLabel />
       <Navbar />
       <main id="konten">
         <Hero />
+        <DragWords />
         <Facts />
         <Story />
-        <Features />
+        <WarungGallery />
+        <ProductStory />
         <Kulakan />
         <Assistant />
         <Ecosystem />
-        <HowToStart />
         <Pricing />
         <Faq />
         <FinalCta />

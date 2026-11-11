@@ -1,4 +1,3 @@
-import type { ReactNode } from "react";
 import { playStoreUrl } from "@/lib/site";
 
 export function GooglePlayIcon({ className }: { className?: string }) {
@@ -31,38 +30,5 @@ export function PlayButton({ dark = true, className = "" }: { dark?: boolean; cl
         <span className="mt-1 text-[1.0625rem] font-bold tracking-tight">Google Play</span>
       </span>
     </a>
-  );
-}
-
-export function SectionHeading({
-  eyebrow,
-  title,
-  lead,
-  align = "center",
-  tone = "light",
-  id,
-}: {
-  eyebrow?: ReactNode;
-  title: ReactNode;
-  lead?: ReactNode;
-  align?: "center" | "left";
-  tone?: "light" | "dark";
-  id?: string;
-}) {
-  const center = align === "center";
-  return (
-    <div className={`reveal ${center ? "mx-auto max-w-3xl text-center" : "max-w-2xl"}`}>
-      {eyebrow ? (
-        <p className={`eyebrow mb-4 ${tone === "dark" ? "text-brand-300" : "text-brand-600"}`}>{eyebrow}</p>
-      ) : null}
-      <h2 id={id} className={`display-lg text-balance ${tone === "dark" ? "text-white" : "text-ink"}`}>
-        {title}
-      </h2>
-      {lead ? (
-        <p className={`lead mt-5 text-pretty ${center ? "mx-auto max-w-2xl" : ""} ${tone === "dark" ? "text-white/70" : "text-muted"}`}>
-          {lead}
-        </p>
-      ) : null}
-    </div>
   );
 }

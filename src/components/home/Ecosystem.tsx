@@ -1,82 +1,94 @@
-import { Store, Warehouse, Bike, ArrowRight, Check } from "lucide-react";
-import { SectionHeading } from "@/components/ui/primitives";
+import { ArrowUpRight, Warehouse, Bike, Package, MapPin, ShoppingCart } from "lucide-react";
+import { SectionHead } from "@/components/ui/Chapter";
+import { Tile, Box } from "@/components/shapes/Shapes";
 import { playStoreUrl, waUrl } from "@/lib/site";
 
 const APPS = [
   {
-    icon: Store,
     name: "Stoqin",
-    for: "Untuk pemilik warung & kasir",
-    points: ["Kasir, stok & buku hutang", "Kulakan ke grosir terdekat", "Laporan untung & asisten AI"],
+    for: "Warung & kasir",
+    points: ["Kasir, stok & hutang", "Kulakan ke grosir"],
     cta: { label: "Unduh di Google Play", href: playStoreUrl },
-    accent: "bg-brand-600 text-white",
+    art: (
+      <>
+        <Box className="absolute left-[16%] top-[20%] size-[38%]" />
+        <Tile icon={ShoppingCart} tone="white" className="absolute bottom-[16%] right-[16%] size-[24%] rotate-6" />
+      </>
+    ),
+    bg: "#E6F6E8",
   },
   {
-    icon: Warehouse,
     name: "Stoqin Grosir",
-    for: "Untuk grosir & distributor",
-    points: ["Katalog, harga & minimal beli", "Terima pesanan dari warung", "Tugaskan kurir & pantau pengantaran"],
+    for: "Grosir & distributor",
+    points: ["Terima pesanan warung", "Atur kurir & katalog"],
     cta: { label: "Jadi mitra grosir", href: waUrl("Halo Stoqin, saya pemilik grosir dan ingin bergabung sebagai mitra.") },
-    accent: "bg-ink text-white",
+    art: (
+      <>
+        <Tile icon={Warehouse} tone="forest" className="absolute left-[18%] top-[18%] size-[34%] -rotate-6" />
+        <Tile icon={Package} tone="leaf" className="absolute bottom-[14%] right-[18%] size-[28%] rotate-6" />
+      </>
+    ),
+    bg: "#EEF1EC",
   },
   {
-    icon: Bike,
     name: "Stoqin Kurir",
-    for: "Untuk kurir grosir",
-    points: ["Daftar tugas antar harian", "Navigasi ke warung tujuan", "Bukti foto & chat dengan warung"],
+    for: "Kurir grosir",
+    points: ["Tugas antar harian", "Navigasi & bukti foto"],
     cta: { label: "Tanya tim Stoqin", href: waUrl("Halo Stoqin, saya ingin tahu tentang aplikasi Stoqin Kurir.") },
-    accent: "bg-honey text-[#2b2000]",
+    art: (
+      <>
+        <Tile icon={Bike} tone="deep" className="absolute left-[18%] top-[22%] size-[34%] rotate-3" />
+        <Tile icon={MapPin} tone="mint" className="absolute bottom-[14%] right-[18%] size-[26%] -rotate-6" />
+      </>
+    ),
+    bg: "#DDF2E0",
   },
 ];
 
 export default function Ecosystem() {
   return (
-    <section id="ekosistem" aria-labelledby="ekosistem-title" className="bg-paper py-24 sm:py-32">
-      <div className="mx-auto max-w-6xl px-4 sm:px-6">
-        <SectionHeading
+    <section id="ekosistem" aria-labelledby="ekosistem-title" className="border-t border-line bg-canvas py-24 sm:py-32">
+      <div className="mx-auto max-w-[1320px] px-4 sm:px-8">
+        <SectionHead
+          n={7}
+          label="Ekosistem"
           id="ekosistem-title"
-          eyebrow="Ekosistem Stoqin"
           title={
             <>
-              Satu ekosistem. <span className="text-muted">Tiga aplikasi.</span>
+              Satu ekosistem, <span className="text-brand-600">tiga aplikasi.</span>
             </>
           }
-          lead="Warung memesan, grosir menyiapkan, kurir mengantar — semuanya tercatat dan terhubung secara langsung. Tidak ada lagi pesanan lewat telepon yang terlupa."
+          lead="Warung pesan, grosir siapkan, kurir antar. Semua tercatat."
         />
 
-        <ol className="reveal mx-auto mt-14 hidden max-w-3xl flex-wrap sm:flex items-center justify-center gap-2 text-sm font-semibold text-ink-2" aria-label="Alur pesanan">
-          {["Warung pesan", "Grosir terima & siapkan", "Kurir antar", "Warung terima barang"].map((s, i, a) => (
-            <li key={s} className="flex items-center gap-2">
-              <span className="rounded-full bg-white px-4 py-2 shadow-[0_0_0_1px_rgb(12_24_16/0.08)]">{s}</span>
-              {i < a.length - 1 ? <ArrowRight className="size-4 text-subtle" aria-hidden /> : null}
-            </li>
-          ))}
-        </ol>
-
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
+        <div className="mt-14 grid gap-4 md:grid-cols-3">
           {APPS.map((app) => (
-            <article key={app.name} className="card reveal flex flex-col p-7 sm:p-8">
-              <span aria-hidden className={`grid size-14 place-items-center rounded-2xl ${app.accent}`}>
-                <app.icon className="size-7" strokeWidth={1.75} />
-              </span>
-              <h3 className="title mt-6">{app.name}</h3>
-              <p className="mt-1 text-sm font-medium text-muted">{app.for}</p>
-              <ul className="mt-6 space-y-3 text-sm text-ink-2">
-                {app.points.map((p) => (
-                  <li key={p} className="flex gap-2.5">
-                    <Check className="mt-0.5 size-4 shrink-0 text-brand-500" strokeWidth={2.5} aria-hidden />
-                    {p}
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={app.cta.href}
-                target="_blank"
-                rel="noopener"
-                className="press mt-8 inline-flex w-fit items-center gap-1.5 rounded-full bg-paper px-4 py-2 text-sm font-semibold text-ink hover:bg-brand-50"
-              >
-                {app.cta.label} <ArrowRight className="size-3.5" aria-hidden />
-              </a>
+            <article key={app.name} className="reveal group flex flex-col overflow-hidden rounded-[24px] border border-line bg-paper">
+              <div className="relative aspect-[16/10] overflow-hidden" style={{ background: app.bg }} aria-hidden>
+                <div className="absolute inset-0 transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:-rotate-2 group-hover:scale-[1.05]">
+                  {app.art}
+                </div>
+              </div>
+              <div className="flex flex-1 flex-col p-6 sm:p-7">
+                <h3 className="text-2xl font-medium tracking-[-0.03em] text-ink">{app.name}</h3>
+                <p className="label mt-2 text-subtle">{app.for}</p>
+                <ul className="mt-5 space-y-2 text-[0.95rem] text-ink-2">
+                  {app.points.map((p) => (
+                    <li key={p} className="flex items-center gap-2.5">
+                      <span aria-hidden className="size-1.5 shrink-0 rounded-full bg-leaf" />
+                      {p}
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={app.cta.href}
+                  target="_blank"
+                  rel="noopener"
+                  className="press mt-7 inline-flex w-fit items-center gap-1.5 rounded-full border border-line-strong bg-canvas px-4 py-2 text-sm font-semibold text-ink hover:border-leaf hover:text-brand-700"
+                >
+                  {app.cta.label} <ArrowUpRight className="size-3.5" aria-hidden />
+                </a>
+              </div>
             </article>
           ))}
         </div>

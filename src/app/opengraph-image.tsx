@@ -53,19 +53,18 @@ export default async function Image() {
             style={{
               display: "flex",
               flexDirection: "column",
-              marginTop: 56,
-              fontSize: 78,
+              marginTop: 44,
+              fontSize: 64,
               fontWeight: 800,
-              lineHeight: 1.02,
-              letterSpacing: -3.5,
+              lineHeight: 1.04,
+              letterSpacing: -2.6,
               color: "#0c1810",
             }}
           >
-            <span>Warung rapi.</span>
-            <span style={{ color: "#00770D" }}>Kulakan hemat.</span>
-          </div>
-          <div style={{ marginTop: 28, fontSize: 28, fontWeight: 700, color: "#5f6b64", lineHeight: 1.4, display: "flex" }}>
-            Kasir, stok, buku hutang & kulakan grosir. Gratis dan tetap jalan tanpa sinyal.
+            <span>Kelola Warung</span>
+            <span>Jadi Mudah,</span>
+            <span style={{ color: "#00770D" }}>Belanja Stok</span>
+            <span style={{ color: "#00770D" }}>Lebih Murah.</span>
           </div>
           <div style={{ display: "flex", marginTop: "auto", gap: 12 }}>
             {["Gratis", "Bisa offline", "Android"].map((t) => (
@@ -87,7 +86,7 @@ export default async function Image() {
           </div>
         </div>
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={dataUrl(phone)} width={440} height={551} style={{ position: "absolute", right: 30, top: 60 }} alt="" />
+        <img src={dataUrl(phone)} width={430} height={727} style={{ position: "absolute", right: 36, top: 36 }} alt="" />
       </div>
     ),
     {
