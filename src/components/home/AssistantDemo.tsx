@@ -110,13 +110,13 @@ export default function AssistantDemo() {
       <div>
         <div className="space-y-3" aria-live="polite">
           <div className="ml-auto w-fit max-w-[85%] rounded-3xl rounded-br-lg bg-ink px-5 py-3.5 text-white">
-            <p className="flex items-center gap-2 text-[0.7rem] font-semibold text-white/60">
+            <p className="flex items-center gap-2 text-xs font-semibold text-white/60">
               <Mic className="size-3" aria-hidden /> Kamu
             </p>
             <p className="mt-0.5 font-semibold">{QA[idx].q}</p>
           </div>
           <div className="card w-fit max-w-[92%] rounded-3xl rounded-bl-lg px-5 py-4">
-            <p className="flex items-center gap-2 text-[0.7rem] font-semibold text-brand-700">
+            <p className="flex items-center gap-2 text-xs font-semibold text-brand-700">
               <Volume2 className="size-3" aria-hidden /> Asisten Stoqin
             </p>
             <p className="mt-1 min-h-[3.2em] text-[1.05rem] leading-relaxed text-ink">

@@ -88,7 +88,7 @@ export default async function FeaturePage({ params }: Props) {
               <span className="text-ink">{f.label}</span>
             </nav>
             <h1 className="display-xl mt-8 max-w-5xl text-balance">
-              {f.h1} <em className="font-serif font-normal italic tracking-[-0.02em] text-brand-600">{f.accent}</em>
+              {f.h1} <span className="text-brand-600">{f.accent}</span>
             </h1>
             <div className="mt-8 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
               <p className="lead max-w-xl text-pretty text-muted">{f.lead}</p>

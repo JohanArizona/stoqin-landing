@@ -26,7 +26,7 @@ export function PlayButton({ dark = true, className = "" }: { dark?: boolean; cl
     >
       <GooglePlayIcon className="size-7" />
       <span className="flex flex-col items-start leading-none">
-        <span className={`text-[0.6875rem] font-medium ${dark ? "text-white/70" : "text-muted"}`}>Unduh gratis di</span>
+        <span className={`text-xs font-medium ${dark ? "text-white/70" : "text-muted"}`}>Unduh gratis di</span>
         <span className="mt-1 text-[1.0625rem] font-bold tracking-tight">Google Play</span>
       </span>
     </a>

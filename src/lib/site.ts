@@ -9,10 +9,10 @@ export const site = {
   name: "Stoqin",
   url: "https://stoqin.id",
   locale: "id_ID",
-  title: "Stoqin — Aplikasi Kasir Warung Gratis, Stok & Kulakan Grosir",
+  title: "Stoqin: Aplikasi Kasir Warung Gratis & Offline untuk Android",
   shortTitle: "Aplikasi Kasir, Stok & Kulakan untuk Warung",
   description:
-    "Stoqin adalah aplikasi kasir warung gratis untuk Android: catat penjualan, kelola stok otomatis, buku hutang, dan kulakan ke grosir langsung dari HP. Tetap jalan tanpa internet.",
+    "Aplikasi kasir warung gratis untuk Android: scan barcode, stok otomatis, buku hutang, laporan untung, dan kulakan grosir. Tetap jalan tanpa internet.",
   email: "stoqinid@gmail.com",
   whatsapp: "6281217260945",
   whatsappDisplay: "0812-1726-0945",

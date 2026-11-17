@@ -37,7 +37,7 @@ export default function ScrollFX() {
           const split = SplitText.create(el, {
             type: "lines,words",
             mask: "lines",
-            linesClass: "fx-line",
+            linesClass: "fxline", // kelas masker jadi "fxline-mask"
             autoSplit: true,
             onSplit(self) {
               return gsap.from(self.words, {

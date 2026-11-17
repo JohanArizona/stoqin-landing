@@ -59,8 +59,8 @@ const CARDS: Card[] = [
           <li key={o.name} className={`flex items-center gap-2.5 rounded-xl px-2.5 py-2 ${o.best ? "bg-brand-50 ring-1 ring-brand-200" : "bg-paper"}`}>
             <Store className="size-4 shrink-0 text-brand-700" aria-hidden />
             <span className="min-w-0 flex-1">
-              <span className="block truncate text-[0.78rem] font-semibold text-ink">{o.name}</span>
-              <span className="flex items-center gap-1 text-[0.68rem] text-muted">
+              <span className="block truncate text-xs font-semibold text-ink">{o.name}</span>
+              <span className="flex items-center gap-1 text-xs text-muted">
                 <Star className="size-3 fill-leaf text-leaf" aria-hidden /> {o.rating}
               </span>
             </span>
@@ -119,15 +119,15 @@ const CARDS: Card[] = [
     back: (
       <div className="rounded-xl bg-white p-3">
         <div className="flex items-center gap-2.5">
-          <span className="grid size-9 place-items-center rounded-lg bg-brand-50 text-[0.65rem] font-bold text-brand-700">IN</span>
+          <span className="grid size-9 place-items-center rounded-lg bg-brand-50 text-xs font-bold text-brand-700">IN</span>
           <span className="flex-1">
             <span className="block text-[0.8rem] font-semibold text-ink">Indomie Goreng</span>
-            <span className="text-[0.7rem] text-muted">
+            <span className="text-xs text-muted">
               Stok 7 · <span className="font-semibold text-brand-700">Menipis</span>
             </span>
           </span>
         </div>
-        <span className="mt-3 flex items-center justify-center gap-1.5 rounded-lg bg-brand-700 py-2 text-[0.75rem] font-bold text-white">
+        <span className="mt-3 flex items-center justify-center gap-1.5 rounded-lg bg-brand-700 py-2 text-xs font-bold text-white">
           <RefreshCw className="size-3.5" aria-hidden /> Restok dari grosir
         </span>
       </div>
@@ -234,7 +234,7 @@ function CourierMap() {
           <circle r="11" fill="#fff" stroke="#00680C" strokeWidth="3" />
         </g>
       </svg>
-      <span className="absolute inset-x-2 bottom-2 flex items-center gap-2 rounded-lg bg-white/90 px-2.5 py-1.5 text-[0.7rem] font-semibold text-ink backdrop-blur">
+      <span className="absolute inset-x-2 bottom-2 flex items-center gap-2 rounded-lg bg-white/90 px-2.5 py-1.5 text-xs font-semibold text-ink backdrop-blur">
         Kurir menuju warungmu · ±12 mnt
         <MessageCircle className="ml-auto size-3.5" aria-hidden />
       </span>

@@ -37,44 +37,46 @@ export default function WarungStory() {
       const caption = stage.querySelector<HTMLElement>("[data-caption]");
       if (!head || !big || !bigImg || !caption) return;
 
-      gsap.set(big, { clipPath: "inset(50% 50% 50% 50% round 24px)" });
-      gsap.set(bigImg, { scale: 1.35 });
+      // Hanya transform & opacity (diproses GPU) supaya mulus; tanpa clip-path.
+      gsap.set(big, { scale: 0.22, opacity: 0, borderRadius: 120, force3D: true });
+      gsap.set(bigImg, { scale: 1.3, force3D: true });
       gsap.set(caption, { opacity: 0, y: 40 });
 
       const tl = gsap.timeline({
         defaults: { ease: "none" },
-        scrollTrigger: { trigger: stage, start: "top top", end: "+=280%", pin: true, scrub: 0.9, anticipatePin: 1, invalidateOnRefresh: true },
+        scrollTrigger: { trigger: stage, start: "top top", end: "+=340%", pin: true, scrub: 1.2, anticipatePin: 1, invalidateOnRefresh: true },
       });
       tl.from(cards, {
-        y: () => window.innerHeight * 0.95,
+        y: () => window.innerHeight * 0.9,
         x: (i) => (PHOTOS[i].x - 50) * -4,
-        rotation: (i) => (i % 2 ? 1 : -1) * 28,
-        scale: 0.8,
+        rotation: (i) => (i % 2 ? 1 : -1) * 24,
+        scale: 0.85,
         opacity: 0,
-        stagger: 0.07,
-        duration: 0.55,
-        ease: "power3.out",
+        stagger: 0.08,
+        duration: 0.6,
+        ease: "power2.out",
       })
-        .to({}, { duration: 0.2 })
-        .to(head, { opacity: 0, y: -70, scale: 0.94, duration: 0.3, ease: "power2.in" })
-        .to(big, { clipPath: "inset(31% 37% 31% 37% round 24px)", duration: 0.25, ease: "power2.out" }, "<0.05")
+        .to({}, { duration: 0.25 })
+        // judul menyingkir, foto toko muncul kecil di tengah
+        .to(head, { opacity: 0, y: -60, duration: 0.35, ease: "power1.in" })
+        .to(big, { opacity: 1, scale: 0.34, duration: 0.35, ease: "power1.out" }, "<")
+        // polaroid terdorong keluar sementara foto membesar memenuhi layar
         .to(
           cards,
           {
-            x: (i) => (PHOTOS[i].x - 50) * window.innerWidth * 0.014,
-            y: (i) => (PHOTOS[i].y - 50) * window.innerHeight * 0.014,
-            scale: 1.25,
+            x: (i) => (PHOTOS[i].x - 50) * window.innerWidth * 0.013,
+            y: (i) => (PHOTOS[i].y - 50) * window.innerHeight * 0.013,
+            scale: 1.15,
             opacity: 0,
-            stagger: 0.015,
-            duration: 0.5,
-            ease: "power2.in",
+            duration: 0.8,
+            ease: "power1.in",
           },
-          "<0.1",
+          ">-0.05",
         )
-        .to(big, { clipPath: "inset(0% 0% 0% 0% round 0px)", duration: 0.55, ease: "power2.inOut" }, "<0.15")
-        .to(bigImg, { scale: 1, duration: 0.7, ease: "power2.out" }, "<")
-        .to(caption, { opacity: 1, y: 0, duration: 0.3, ease: "power3.out" }, ">-0.2")
-        .to({}, { duration: 0.25 });
+        .to(big, { scale: 1, borderRadius: 0, duration: 0.9, ease: "power2.inOut" }, "<")
+        .to(bigImg, { scale: 1, duration: 0.9, ease: "power2.inOut" }, "<")
+        .to(caption, { opacity: 1, y: 0, duration: 0.35, ease: "power2.out" }, ">-0.15")
+        .to({}, { duration: 0.3 });
     });
 
     // HP/tablet: polaroid naik bergiliran + parallax ringan.
@@ -107,7 +109,7 @@ export default function WarungStory() {
             <Chapter n={3}>Dari lapangan</Chapter>
           </div>
           <h2 id="lapangan-title" className="display-lg mt-6 max-w-2xl text-balance">
-            Dibuat bersama <em className="font-serif font-normal italic tracking-[-0.02em] text-brand-600">warung sungguhan.</em>
+            Dibuat bersama <span className="text-brand-600">warung sungguhan.</span>
           </h2>
           <p className="lead mt-5 max-w-md text-pretty text-muted lg:mx-auto">Kami turun ke warung-warung di Malang, mendengar, lalu membangun Stoqin bersama pemiliknya.</p>
         </div>
@@ -125,8 +127,8 @@ export default function WarungStory() {
                 <div className="relative aspect-[4/5] overflow-hidden rounded-[3px] bg-paper-2">
                   <Image src={p.src} alt={p.alt} fill sizes="(max-width: 640px) 45vw, (max-width: 1024px) 24vw, 200px" className="object-cover" />
                 </div>
-                <figcaption className="flex items-center justify-between pt-[7%] font-serif text-[0.95rem] italic text-ink-2">
-                  Malang <span className="label not-italic text-subtle">No. {String(i + 1).padStart(2, "0")}</span>
+                <figcaption className="flex items-center justify-between pt-[7%] text-[0.9rem] font-semibold text-ink-2">
+                  Malang <span className="label text-subtle">No. {String(i + 1).padStart(2, "0")}</span>
                 </figcaption>
               </div>
             </figure>
@@ -136,7 +138,7 @@ export default function WarungStory() {
         {/* Foto toko yang terbuka memenuhi layar */}
         <figure
           data-big
-          className="relative mx-4 mt-14 overflow-hidden rounded-[24px] sm:mx-8 lg:absolute lg:inset-0 lg:z-20 lg:m-0 lg:rounded-none"
+          className="relative mx-4 mt-14 overflow-hidden rounded-[24px] sm:mx-8 lg:absolute lg:inset-0 lg:z-20 lg:m-0 lg:origin-center lg:will-change-transform"
         >
           <div className="relative aspect-[4/5] sm:aspect-[16/9] lg:aspect-auto lg:h-full">
             <Image src="/warung/toko-sembako.webp" alt="Toko sembako di Malang dengan etalase penuh jajanan dan sembako, tempat riset lapangan Stoqin" fill sizes="100vw" className="object-cover" />
@@ -145,7 +147,7 @@ export default function WarungStory() {
           <figcaption data-caption className="absolute inset-x-0 bottom-0 mx-auto max-w-[1320px] px-6 pb-8 text-white sm:px-8 sm:pb-12 lg:pb-16">
             <span className="label text-white/70">Riset lapangan · Malang</span>
             <p className="mt-3 max-w-3xl text-[clamp(1.6rem,3.6vw,3.25rem)] font-medium leading-[1.08] tracking-[-0.035em]">
-              Setiap fitur Stoqin lahir dari obrolan di depan <em className="font-serif font-normal italic">etalase.</em>
+              Setiap fitur Stoqin lahir dari obrolan di depan <span className="text-brand-300">etalase.</span>
             </p>
           </figcaption>
         </figure>

@@ -28,6 +28,11 @@ export default function Hero() {
 
         <div className="relative mx-auto w-full max-w-[1320px] px-4 sm:px-8">
           <h1 id="hero-title" className="text-[clamp(2.6rem,7vw,6.6rem)] font-medium leading-[1.04] tracking-[-0.05em] text-ink">
+            <span className="fade-up mb-6 inline-flex items-center gap-2 rounded-full border border-brand-200 bg-brand-50 px-3.5 py-1.5 text-[0.8rem] font-semibold leading-normal tracking-normal text-brand-700 [animation-delay:calc(var(--intro-delay,0s)_+_200ms)] sm:text-sm">
+              <span aria-hidden className="size-1.5 rounded-full bg-leaf" />
+              Aplikasi kasir warung gratis untuk Android
+            </span>
+            <span className="sr-only"> — </span>
             <span data-exit="0.6" className="flex flex-wrap items-center gap-x-[0.2em]">
               <Line>Kelola Warung</Line>
               <Toy depth={18} delay={420}>
@@ -54,14 +59,14 @@ export default function Hero() {
                 <Box className="size-[0.86em]" />
               </Toy>
               <Line delay={270}>
-                <em className="font-serif font-normal italic tracking-[-0.025em] text-brand-600">Lebih Murah.</em>
+                <span className="text-brand-600">Lebih Murah.</span>
               </Line>
             </span>
           </h1>
 
           <div data-exit="1.8" className="mt-10 flex flex-col gap-7 sm:mt-14 md:flex-row md:items-center md:justify-between">
-            <p className="lead fade-up max-w-md text-pretty text-muted [animation-delay:calc(var(--intro-delay,0s)_+_450ms)]">
-              Kasir, stok, hutang, dan kulakan grosir dalam satu aplikasi. Gratis, dan tetap jalan tanpa sinyal.
+            <p className="lead rise-in max-w-md text-pretty text-muted [animation-delay:calc(var(--intro-delay,0s)_+_450ms)]">
+              <strong className="font-semibold text-ink">Stoqin</strong> adalah aplikasi kasir, stok, buku hutang, dan kulakan grosir untuk warung. Gratis, dan tetap jalan tanpa internet.
             </p>
             <a
               href={playStoreUrl}
@@ -82,7 +87,7 @@ export default function Hero() {
 
 function Line({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
   return (
-    <span className="-mb-[0.1em] inline-block overflow-hidden pb-[0.2em] align-middle">
+    <span className="-my-[0.22em] inline-block overflow-hidden py-[0.22em] align-middle">
       <span className="line-in inline-block" style={{ animationDelay: `calc(var(--intro-delay, 0s) + ${delay}ms)` }}>
         {children}{" "}
       </span>

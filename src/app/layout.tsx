@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, Geist_Mono, Instrument_Serif } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
 import ScrollFX from "@/components/motion/ScrollFX";
@@ -12,22 +12,7 @@ const jakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-// Label bab bergaya mono ("01 —— KASIR").
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-geist-mono",
-  weight: ["400", "500"],
-  display: "swap",
-});
 
-// Aksen editorial: dipakai hemat untuk 1-2 kata miring per judul.
-const serif = Instrument_Serif({
-  subsets: ["latin"],
-  variable: "--font-instrument",
-  weight: "400",
-  style: ["italic"],
-  display: "swap",
-});
 
 export const viewport: Viewport = {
   themeColor: "#f7f7f4",
@@ -108,7 +93,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="id" className={`${jakarta.variable} ${geistMono.variable} ${serif.variable}`}>
+    <html lang="id" className={jakarta.variable}>
       <body className="min-h-dvh overflow-x-clip bg-paper text-ink antialiased">
         {children}
         <ScrollFX />

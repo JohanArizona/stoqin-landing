@@ -44,7 +44,7 @@ function Portrait({ m, src, sizes, round = false }: { m: Member; src?: string; s
       className="absolute inset-0 grid place-items-center overflow-hidden bg-[radial-gradient(120%_90%_at_30%_15%,#2bb83b_0%,#00770d_55%,#14281d_100%)] text-white"
     >
       <LogoMark className="absolute -bottom-[8%] -right-[10%] h-[62%] w-auto opacity-15" />
-      <span className={`relative font-serif italic leading-none ${round ? "text-2xl" : "text-[clamp(3rem,6vw,4.5rem)]"}`}>{initials(m.name)}</span>
+      <span className={`relative font-semibold leading-[1.15] tracking-[-0.04em] ${round ? "text-xl" : "text-[clamp(2.6rem,5vw,3.75rem)]"}`}>{initials(m.name)}</span>
     </span>
   );
 }
@@ -130,7 +130,7 @@ export default function Team({ photos }: { photos: Record<string, string> }) {
         <div className="pointer-events-none relative z-10 flex h-full flex-col items-center justify-center text-center">
           <Chapter n={8}>Tim</Chapter>
           <h2 id="tim-title" className="display-xl mt-6 max-w-3xl text-balance">
-            Orang-orang di balik <em className="font-serif font-normal italic tracking-[-0.02em] text-brand-600">Stoqin.</em>
+            Orang-orang di balik <span className="text-brand-600">Stoqin.</span>
           </h2>
           <p className="lead mt-5 max-w-md text-pretty text-muted">
             {ALL_MEMBERS.length} orang, satu misi: bikin warung naik kelas.
@@ -198,8 +198,8 @@ export default function Team({ photos }: { photos: Record<string, string> }) {
                         <div aria-hidden className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#0a1a10]/90 to-transparent" />
                         <figcaption className="absolute inset-x-3 bottom-3 text-left text-white sm:inset-x-4 sm:bottom-4">
                           <span className="block text-[0.9rem] font-semibold leading-tight sm:text-[0.95rem]">{m.name}</span>
-                          <span className="mt-1 block text-[0.72rem] leading-snug text-white/75 sm:text-xs">{m.role}</span>
-                          {m.detail ? <span className="mt-0.5 block text-[0.68rem] leading-snug text-white/55">{m.detail}</span> : null}
+                          <span className="mt-1 block text-xs leading-snug text-white/75 sm:text-xs">{m.role}</span>
+                          {m.detail ? <span className="mt-0.5 block text-xs leading-snug text-white/55">{m.detail}</span> : null}
                         </figcaption>
                       </div>
                     </figure>

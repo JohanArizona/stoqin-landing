@@ -20,6 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       images: f.screens.map((s) => `${site.url}/app/${s}.webp`),
     })),
     {
+      url: `${site.url}/panduan/cara-memilih-aplikasi-kasir-warung`,
+      lastModified: new Date("2026-11-18"),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
       url: `${site.url}/privasi`,
       lastModified: new Date("2026-09-28"),
       changeFrequency: "yearly",

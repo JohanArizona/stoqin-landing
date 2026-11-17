@@ -1,9 +1,8 @@
 import Navbar from "@/components/site/Navbar";
 import Footer from "@/components/site/Footer";
 import Hero from "@/components/home/Hero";
-import Facts from "@/components/home/Facts";
 import Story from "@/components/home/Story";
-import DragWords from "@/components/home/DragWords";
+import HowItWorks from "@/components/home/HowItWorks";
 import WarungStory from "@/components/home/WarungStory";
 import Team from "@/components/home/Team";
 import { teamPhotos } from "@/lib/team-photos";
@@ -153,9 +152,8 @@ export default function Home() {
       <Navbar />
       <main id="konten">
         <Hero />
-        <DragWords />
-        <Facts />
         <Story />
+        <HowItWorks />
         <WarungStory />
         <ProductStory />
         <ScrollBand />

@@ -11,6 +11,14 @@ export const faqs: { q: string; a: string }[] = [
     a: "Stoqin adalah aplikasi Android untuk warung dan toko kelontong: kasir digital, manajemen stok, buku hutang pelanggan, laporan penjualan, dan kulakan (belanja stok) langsung ke grosir. Stoqin juga punya aplikasi untuk grosir dan kurir, jadi pesanan dari warung tercatat sampai barang diantar.",
   },
   {
+    q: "Apa aplikasi kasir yang bagus untuk warung kecil?",
+    a: "Untuk warung kecil, pilih aplikasi kasir yang gratis, bisa dipakai tanpa internet, bisa scan barcode pakai kamera HP, mencatat stok dan hutang pelanggan, serta mudah dipakai. Stoqin dibuat khusus untuk warung dan toko kelontong dengan semua fitur itu, ditambah kulakan grosir langsung dari HP.",
+  },
+  {
+    q: "Apakah ada aplikasi kasir gratis yang bisa offline?",
+    a: "Ada. Stoqin bisa dipakai gratis dan tetap jalan tanpa internet: transaksi, hutang, dan perubahan stok disimpan di HP lalu dikirim otomatis saat sinyal kembali.",
+  },
+  {
     q: "Apakah aplikasi kasir Stoqin gratis?",
     a: `Ya. Kasir, manajemen stok, buku hutang, kelola kasir, laporan harian, dan kulakan grosir bisa dipakai gratis tanpa batas waktu. Stoqin Pro (${rupiah(site.proPrice)}/bulan) menambahkan analisis keuangan, performa produk, analisis kesehatan toko, rekomendasi restok, dan asisten suara AI.`,
   },

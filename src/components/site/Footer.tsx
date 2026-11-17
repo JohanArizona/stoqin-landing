@@ -7,11 +7,11 @@ const COLS = [
   {
     title: "Produk",
     links: [
-      { href: "/kasir", label: "Aplikasi kasir" },
-      { href: "/stok", label: "Manajemen stok" },
-      { href: "/buku-hutang", label: "Buku hutang" },
-      { href: "/kulakan", label: "Kulakan grosir" },
-      { href: "/laporan", label: "Laporan & laba" },
+      { href: "/aplikasi-kasir-warung", label: "Aplikasi kasir" },
+      { href: "/aplikasi-stok-barang", label: "Manajemen stok" },
+      { href: "/aplikasi-buku-hutang", label: "Buku hutang" },
+      { href: "/aplikasi-kulakan-grosir", label: "Kulakan grosir" },
+      { href: "/laporan-penjualan-warung", label: "Laporan & laba" },
       { href: "/#harga", label: "Harga" },
     ],
   },
@@ -28,6 +28,7 @@ const COLS = [
     title: "Bantuan",
     links: [
       { href: "/#faq", label: "FAQ" },
+      { href: "/panduan/cara-memilih-aplikasi-kasir-warung", label: "Panduan memilih aplikasi kasir" },
       { href: waUrl(), label: "WhatsApp", external: true },
       { href: `mailto:${site.email}`, label: "Email" },
       { href: "/privasi", label: "Kebijakan Privasi" },
@@ -55,13 +56,13 @@ export default function Footer() {
           {COLS.map((c) => (
             <nav key={c.title} aria-label={c.title}>
               <p className="label text-subtle">{c.title}</p>
-              <ul className="mt-4 space-y-2.5">
+              <ul className="mt-3 space-y-0.5">
                 {c.links.map((l) => (
                   <li key={l.label}>
                     <a
                       href={l.href}
                       {...("external" in l && l.external ? { target: "_blank", rel: "noopener" } : {})}
-                      className="text-sm text-ink-2 transition-colors hover:text-brand-700"
+                      className="inline-block py-1.5 text-sm text-ink-2 transition-colors hover:text-brand-700"
                     >
                       {l.label}
                     </a>

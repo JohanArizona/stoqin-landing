@@ -21,12 +21,12 @@ export type Feature = {
 
 export const FEATURES: Feature[] = [
   {
-    slug: "kasir",
+    slug: "aplikasi-kasir-warung",
     nav: "Kasir",
     label: "Kasir digital",
     title: "Aplikasi Kasir Warung Gratis untuk Android",
     description:
-      "Aplikasi kasir warung gratis: scan barcode pakai kamera HP, kasir suara, bayar tunai, QRIS, transfer, atau hutang, cetak struk Bluetooth, dan tetap jalan tanpa internet.",
+      "Aplikasi kasir warung gratis: scan barcode pakai kamera HP, kasir suara, bayar tunai, QRIS, atau hutang, cetak struk, dan tetap jalan tanpa internet.",
     h1: "Aplikasi kasir warung yang",
     accent: "secepat bicara.",
     lead: "Scan barcode pakai kamera HP atau sebut saja pesanannya. Pembayaran, struk, dan stok beres dalam satu layar.",
@@ -55,11 +55,12 @@ export const FEATURES: Feature[] = [
     ],
   },
   {
-    slug: "stok",
+    slug: "aplikasi-stok-barang",
     nav: "Stok",
     label: "Manajemen stok",
-    title: "Aplikasi Stok Barang Warung: Stok Otomatis & Pengingat Restok",
-    description: `Kelola stok barang warung otomatis: stok berkurang setiap penjualan, pengingat restok sebelum habis, katalog ${site.catalogSize} produk siap scan, dan restok langsung dari grosir.`,
+    title: "Aplikasi Stok Barang Warung Otomatis",
+    description:
+      "Kelola stok warung otomatis: stok berkurang tiap penjualan, pengingat restok sebelum habis, scan barcode dari katalog 50.600+ produk.",
     h1: "Stok warung yang",
     accent: "mengurus dirinya sendiri.",
     lead: "Setiap penjualan langsung memotong stok. Kamu diingatkan sebelum barang laris habis, dan bisa restok dari HP.",
@@ -84,12 +85,12 @@ export const FEATURES: Feature[] = [
     ],
   },
   {
-    slug: "buku-hutang",
+    slug: "aplikasi-buku-hutang",
     nav: "Buku hutang",
     label: "Buku hutang digital",
-    title: "Buku Hutang Digital untuk Warung: Catat Kasbon Pelanggan",
+    title: "Aplikasi Buku Hutang & Kasbon Warung",
     description:
-      "Catat hutang dan kasbon pelanggan warung secara digital. Tercatat otomatis dari kasir, lihat jatuh tempo, dan tandai lunas sekali ketuk. Gratis di aplikasi Stoqin.",
+      "Catat hutang dan kasbon pelanggan warung secara digital: tercatat otomatis dari kasir, lihat jatuh tempo, tandai lunas sekali ketuk. Gratis.",
     h1: "Buku hutang yang",
     accent: "tidak pernah hilang.",
     lead: "Pilih “Hutang” saat bayar, nama pelanggan dan barangnya tercatat sendiri. Tandai lunas sekali ketuk.",
@@ -114,12 +115,12 @@ export const FEATURES: Feature[] = [
     ],
   },
   {
-    slug: "kulakan",
+    slug: "aplikasi-kulakan-grosir",
     nav: "Kulakan",
     label: "Kulakan grosir",
     title: "Aplikasi Kulakan Grosir Online untuk Warung",
     description:
-      "Kulakan stok warung dari HP: bandingkan harga grosir terdekat, bayar lewat QRIS, virtual account, e-wallet, atau minimarket, lalu lacak kurir sampai depan warung.",
+      "Kulakan stok warung dari HP: bandingkan harga grosir terdekat, bayar QRIS atau virtual account, lalu lacak kurir sampai depan warung.",
     h1: "Kulakan tanpa",
     accent: "ke pasar.",
     lead: "Bandingkan harga dari grosir terdekat, pesan dari HP, dan barang diantar kurir sampai depan warung.",
@@ -144,11 +145,12 @@ export const FEATURES: Feature[] = [
     ],
   },
   {
-    slug: "laporan",
+    slug: "laporan-penjualan-warung",
     nav: "Laporan",
     label: "Laporan & analisis",
     title: "Laporan Penjualan & Laba Warung Otomatis",
-    description: `Laporan penjualan warung otomatis: omzet, laba bersih, margin, barang terlaris, skor kesehatan warung, dan rekomendasi restok. Mulai gratis, Pro ${rupiah(site.proPrice)}/bulan.`,
+    description:
+      "Laporan penjualan warung otomatis: omzet, laba bersih, margin, barang terlaris, dan rekomendasi restok. Laporan harian gratis.",
     h1: "Tahu untung,",
     accent: "bukan cuma omzet.",
     lead: "Omzet, laba, margin, dan barang terlaris dihitung otomatis dari setiap transaksi kasir.",

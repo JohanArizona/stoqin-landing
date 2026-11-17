@@ -37,7 +37,7 @@ const STEPS: Step[] = [
   {
     key: "kasir",
     screen: "kasir",
-    href: "/kasir",
+    href: "/aplikasi-kasir-warung",
     tag: "Kasir digital",
     title: "Jualan secepat bicara.",
     body: "Scan barcode pakai kamera, atau ketuk mikrofon dan sebut pesanannya.",
@@ -51,7 +51,7 @@ const STEPS: Step[] = [
   {
     key: "stok",
     screen: "stok",
-    href: "/stok",
+    href: "/aplikasi-stok-barang",
     tag: "Stok otomatis",
     title: "Stok berkurang sendiri.",
     body: "Setiap penjualan memotong stok, dan kamu diingatkan sebelum barang habis.",
@@ -64,7 +64,7 @@ const STEPS: Step[] = [
   {
     key: "hutang",
     screen: "hutang",
-    href: "/buku-hutang",
+    href: "/aplikasi-buku-hutang",
     tag: "Buku hutang",
     title: "Hutang tercatat rapi.",
     body: "Lihat siapa yang jatuh tempo, ingatkan pelanggan, tandai lunas sekali ketuk.",
@@ -74,7 +74,7 @@ const STEPS: Step[] = [
   {
     key: "kulakan",
     screen: "kulakan",
-    href: "/kulakan",
+    href: "/aplikasi-kulakan-grosir",
     tag: "Kulakan",
     title: "Belanja stok dari HP.",
     body: "Bandingkan grosir terdekat, ambil promo, barang diantar sampai warung.",
@@ -84,7 +84,7 @@ const STEPS: Step[] = [
   {
     key: "laporan",
     screen: "premium",
-    href: "/laporan",
+    href: "/laporan-penjualan-warung",
     tag: "Laporan",
     title: "Tahu untung, bukan cuma omzet.",
     body: "Laba, margin, barang terlaris, sampai skor kesehatan warung.",
@@ -130,7 +130,7 @@ export default function ProductStory() {
           id="fitur-title"
           title={
             <>
-              Semua urusan warung. <em className="font-serif font-normal italic tracking-[-0.02em] text-brand-600">Di satu HP.</em>
+              Semua urusan warung. <span className="text-brand-600">Di satu HP.</span>
             </>
           }
         />
@@ -216,7 +216,7 @@ export default function ProductStory() {
                   ))}
                 </ul>
                 {st.href ? (
-                  <Link href={st.href} className="group mt-6 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-brand-700 hover:text-brand-800">
+                  <Link href={st.href} className="group mt-5 inline-flex w-fit items-center gap-1.5 py-2 text-sm font-semibold text-brand-700 hover:text-brand-800">
                     Selengkapnya tentang {st.tag.toLowerCase()}
                     <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden />
                   </Link>
