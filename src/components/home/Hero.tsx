@@ -28,7 +28,7 @@ export default function Hero() {
 
         <div className="relative mx-auto w-full max-w-[1320px] px-4 sm:px-8">
           <h1 id="hero-title" className="text-[clamp(2.6rem,7vw,6.6rem)] font-medium leading-[1.04] tracking-[-0.05em] text-ink">
-            <span className="flex flex-wrap items-center gap-x-[0.2em]">
+            <span data-exit="0.6" className="flex flex-wrap items-center gap-x-[0.2em]">
               <Line>Kelola Warung</Line>
               <Toy depth={18} delay={420}>
                 <Tile icon={Store} tone="leaf" className={`${T} -rotate-6`} />
@@ -37,19 +37,19 @@ export default function Hero() {
                 <Tile icon={TrendingUp} tone="mint" className={`${T} rotate-3`} />
               </Toy>
             </span>
-            <span className="flex flex-wrap items-center gap-x-[0.2em] md:justify-end">
+            <span data-exit="0.9" className="flex flex-wrap items-center gap-x-[0.2em] md:justify-end">
               <Toy depth={22} delay={560} className="hidden md:inline-block">
                 <Tile icon={Sparkles} tone="forest" className={`${T} rotate-6`} />
               </Toy>
               <Line delay={90}>Jadi Mudah,</Line>
             </span>
-            <span className="flex flex-wrap items-center gap-x-[0.2em] md:pl-[1.2em]">
+            <span data-exit="1.2" className="flex flex-wrap items-center gap-x-[0.2em] md:pl-[1.2em]">
               <Line delay={180}>Belanja Stok</Line>
               <Toy depth={-20} delay={640}>
                 <Tile icon={ShoppingCart} tone="deep" className={`${T} -rotate-3`} />
               </Toy>
             </span>
-            <span className="flex flex-wrap items-center gap-x-[0.2em] md:justify-end">
+            <span data-exit="1.5" className="flex flex-wrap items-center gap-x-[0.2em] md:justify-end">
               <Toy depth={16} delay={720} className="hidden sm:inline-block">
                 <Box className="size-[0.86em]" />
               </Toy>
@@ -59,7 +59,7 @@ export default function Hero() {
             </span>
           </h1>
 
-          <div className="mt-10 flex flex-col gap-7 sm:mt-14 md:flex-row md:items-center md:justify-between">
+          <div data-exit="1.8" className="mt-10 flex flex-col gap-7 sm:mt-14 md:flex-row md:items-center md:justify-between">
             <p className="lead fade-up max-w-md text-pretty text-muted [animation-delay:calc(var(--intro-delay,0s)_+_450ms)]">
               Kasir, stok, hutang, dan kulakan grosir dalam satu aplikasi. Gratis, dan tetap jalan tanpa sinyal.
             </p>

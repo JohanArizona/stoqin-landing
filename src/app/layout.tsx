@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Plus_Jakarta_Sans, Geist_Mono, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 import { site } from "@/lib/site";
+import ScrollFX from "@/components/motion/ScrollFX";
 
 // Font yang sama dengan aplikasi Android (Plus Jakarta Sans).
 const jakarta = Plus_Jakarta_Sans({
@@ -108,7 +109,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="id" className={`${jakarta.variable} ${geistMono.variable} ${serif.variable}`}>
-      <body className="min-h-dvh overflow-x-clip bg-paper text-ink antialiased">{children}</body>
+      <body className="min-h-dvh overflow-x-clip bg-paper text-ink antialiased">
+        {children}
+        <ScrollFX />
+      </body>
     </html>
   );
 }

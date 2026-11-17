@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 /** Label bab: "01 — Kasir digital". */
 export function Chapter({ n, children, tone = "light" }: { n: number; children: ReactNode; tone?: "light" | "dark" }) {
   return (
-    <p className={`label flex items-center gap-3 ${tone === "dark" ? "text-white/60" : "text-muted"}`}>
+    <p data-chapter className={`label flex items-center gap-3 ${tone === "dark" ? "text-white/60" : "text-muted"}`}>
       <span aria-hidden className="inline-block size-2 rounded-full bg-leaf" />
       <span className="tabular-nums">{String(n).padStart(2, "0")}</span>
       <span aria-hidden className={`h-px w-6 ${tone === "dark" ? "bg-white/30" : "bg-ink/20"}`} />

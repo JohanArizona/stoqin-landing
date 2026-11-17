@@ -17,7 +17,7 @@ export default function FinalCta() {
     <section aria-labelledby="cta-title" className="relative overflow-hidden border-t border-line bg-paper py-24 sm:py-32">
       <div className="mx-auto grid max-w-[1320px] items-center gap-10 px-4 sm:px-8 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="relative z-10">
-          <Chapter n={10}>Mulai sekarang</Chapter>
+          <Chapter n={11}>Mulai sekarang</Chapter>
           <h2 id="cta-title" className="display-xl mt-6 text-balance">
             Warungmu, <em className="font-serif font-normal italic tracking-[-0.02em] text-brand-600">naik kelas.</em>
           </h2>

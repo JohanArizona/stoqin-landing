@@ -8,7 +8,7 @@ export default function Faq() {
     <section id="faq" aria-labelledby="faq-title" className="border-t border-line bg-canvas py-24 sm:py-36">
       <div className="mx-auto grid max-w-[1320px] gap-12 px-4 sm:px-8 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
         <div className="lg:sticky lg:top-28 lg:self-start">
-          <Chapter n={9}>FAQ</Chapter>
+          <Chapter n={10}>FAQ</Chapter>
           <h2 id="faq-title" className="display-lg mt-6 text-balance">
             Yang sering ditanyakan.
           </h2>

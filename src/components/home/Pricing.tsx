@@ -27,7 +27,7 @@ export default function Pricing() {
     <section id="harga" aria-labelledby="harga-title" className="border-t border-line bg-paper py-24 sm:py-36">
       <div className="mx-auto max-w-[1320px] px-4 sm:px-8">
         <SectionHead
-          n={8}
+          n={9}
           label="Harga"
           id="harga-title"
           title={

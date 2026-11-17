@@ -4,7 +4,9 @@ import Hero from "@/components/home/Hero";
 import Facts from "@/components/home/Facts";
 import Story from "@/components/home/Story";
 import DragWords from "@/components/home/DragWords";
-import WarungGallery from "@/components/home/WarungGallery";
+import WarungStory from "@/components/home/WarungStory";
+import Team from "@/components/home/Team";
+import ScrollBand from "@/components/home/ScrollBand";
 import ProductStory from "@/components/home/ProductStory";
 import Kulakan from "@/components/home/Kulakan";
 import Assistant from "@/components/home/Assistant";
@@ -153,11 +155,13 @@ export default function Home() {
         <DragWords />
         <Facts />
         <Story />
-        <WarungGallery />
+        <WarungStory />
         <ProductStory />
+        <ScrollBand />
         <Kulakan />
         <Assistant />
         <Ecosystem />
+        <Team />
         <Pricing />
         <Faq />
         <FinalCta />

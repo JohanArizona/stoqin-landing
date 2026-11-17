@@ -37,6 +37,7 @@ export const navLinks = [
   { href: "/#kulakan", label: "Kulakan" },
   { href: "/#asisten", label: "Asisten AI" },
   { href: "/#ekosistem", label: "Ekosistem" },
+  { href: "/#tim", label: "Tim" },
   { href: "/#harga", label: "Harga" },
   { href: "/#faq", label: "FAQ" },
 ] as const;

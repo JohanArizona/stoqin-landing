@@ -474,3 +474,52 @@ html.no-intro .intro {
     opacity: 0;
   }
 }
+
+/* ---------- ScrollFX: masker baris judul (beri ruang untuk kaki huruf g, y, j) ---------- */
+.fx-line-mask {
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+.fx-line {
+  will-change: transform;
+}
+
+/* ---------- Polaroid foto warung ---------- */
+.polaroid {
+  rotate: calc(var(--r) * 0.6);
+}
+.polaroid:nth-child(even) {
+  translate: 0 2.25rem;
+}
+.polaroid-inner {
+  transition:
+    transform 600ms var(--ease-spring),
+    box-shadow 400ms ease;
+}
+@media (hover: hover) {
+  .polaroid-inner:hover {
+    transform: rotate(calc(var(--r) * -1)) translateY(-8px) scale(1.06);
+    box-shadow: 0 40px 70px -28px rgb(15 26 20 / 0.55);
+  }
+}
+@media (min-width: 1024px) {
+  .polaroid,
+  .polaroid:nth-child(even) {
+    left: var(--x);
+    top: var(--y);
+    translate: -50% -50%;
+    rotate: var(--r);
+  }
+}
+
+/* ---------- Foto tim: kartu miring yang lurus saat di-hover ---------- */
+.team-photo {
+  rotate: var(--tilt);
+  transition: rotate 700ms var(--ease-spring), scale 700ms var(--ease-spring);
+}
+@media (hover: hover) {
+  .team-photo:hover {
+    rotate: 0deg;
+    scale: 1.03;
+  }
+}
