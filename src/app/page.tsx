@@ -6,6 +6,7 @@ import Story from "@/components/home/Story";
 import DragWords from "@/components/home/DragWords";
 import WarungStory from "@/components/home/WarungStory";
 import Team from "@/components/home/Team";
+import { teamPhotos } from "@/lib/team-photos";
 import ScrollBand from "@/components/home/ScrollBand";
 import ProductStory from "@/components/home/ProductStory";
 import Kulakan from "@/components/home/Kulakan";
@@ -161,7 +162,7 @@ export default function Home() {
         <Kulakan />
         <Assistant />
         <Ecosystem />
-        <Team />
+        <Team photos={teamPhotos()} />
         <Pricing />
         <Faq />
         <FinalCta />
