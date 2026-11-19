@@ -7,6 +7,20 @@ const nextConfig: NextConfig = {
     formats: ["image/avif", "image/webp"],
     minimumCacheTTL: 60 * 60 * 24 * 30,
   },
+  // Digital Asset Links (App Links + berbagi kredensial Google untuk com.stoqin.app):
+  // harus dilayani langsung sebagai JSON, tanpa redirect, di stoqin.id dan www.stoqin.id.
+  async headers() {
+    return [
+      {
+        source: "/.well-known/assetlinks.json",
+        headers: [
+          { key: "Content-Type", value: "application/json" },
+          { key: "Cache-Control", value: "public, max-age=3600" },
+          { key: "Access-Control-Allow-Origin", value: "*" },
+        ],
+      },
+    ];
+  },
   async redirects() {
     return [
       { source: "/privasi.html", destination: "/privasi", permanent: true },

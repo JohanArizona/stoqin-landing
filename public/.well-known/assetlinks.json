@@ -1,0 +1,17 @@
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.stoqin.app",
+      "sha256_cert_fingerprints": [
+        "C5:DB:A8:BD:40:AC:1D:67:F0:50:76:A8:31:40:C0:DB:B6:B2:E7:59:75:42:CC:94:FE:5B:83:0B:25:B9:87:C3",
+        "ED:EB:0F:DA:47:3A:EC:8D:A4:29:27:C8:E6:2F:ED:BC:1E:D8:CE:89:D7:53:F1:1E:D9:64:42:18:84:58:24:5C",
+        "E9:4B:2C:5D:44:08:C1:C8:DC:9D:3E:5E:CC:5A:EB:E5:72:49:99:AE:CF:D4:7A:AF:2C:AC:11:D8:7C:6C:70:80"
+      ]
+    }
+  }
+]
