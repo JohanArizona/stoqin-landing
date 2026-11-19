@@ -23,6 +23,14 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      // stoqin.id → www.stoqin.id, KECUALI /.well-known/ (assetlinks.json wajib dilayani tanpa redirect
+      // supaya Android App Links & berbagi kredensial terverifikasi di kedua domain).
+      {
+        source: "/:path((?!\.well-known/).*)",
+        has: [{ type: "host", value: "stoqin.id" }],
+        destination: "https://www.stoqin.id/:path",
+        permanent: true,
+      },
       { source: "/privasi.html", destination: "/privasi", permanent: true },
       // URL halaman fitur lama → URL berkata kunci (301, aman untuk SEO).
       { source: "/kasir", destination: "/aplikasi-kasir-warung", permanent: true },

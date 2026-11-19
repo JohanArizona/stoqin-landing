@@ -7,7 +7,8 @@
  */
 export const site = {
   name: "Stoqin",
-  url: "https://stoqin.id",
+  // Domain utama = www (sama dengan pengaturan Vercel). stoqin.id dialihkan ke sini oleh next.config.ts.
+  url: "https://www.stoqin.id",
   locale: "id_ID",
   title: "Stoqin: Aplikasi Kasir Warung Gratis & Offline untuk Android",
   shortTitle: "Aplikasi Kasir, Stok & Kulakan untuk Warung",
